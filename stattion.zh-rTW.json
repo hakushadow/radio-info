@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "parserVersion": "1.0.0",
+  "lastUpdated": "2025-07-04T10:00:00Z",
+  "license": "CC-BY-4.0",
+  "attribution": "Disconnect lab/hakus.cc",
+  "stations": [
+    {
+      "id": "1",
+      "name": "Animu radio",
+      "genre": "動漫",
+      "bitrate": "320 kbps",
+      "url": "https://cast.animu.com.br:9079/stream",
+      "sourceUrl": "https://animu.com.br/",
+      "description": "全天候播放動畫歌曲的優質電台"
+    }
+  ]
+}

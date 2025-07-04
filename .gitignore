@@ -1,0 +1,22 @@
+
+# 忽略所有其他檔案（除上述外）
+*
+
+# 例外：保留 .gitignore 本身
+!.gitignore
+
+# 允許這三種副檔名
+!*.json
+!*.txt
+!*.md
+
+# 附加保險：常見 IDE / 系統自動產生檔案
+.DS_Store
+.idea/
+.vscode/
+*.iml
+*.log
+*.tmp
+node_modules/
+build/
+out/
