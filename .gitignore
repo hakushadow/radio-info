@@ -9,6 +9,7 @@
 !*.json
 !*.txt
 !*.md
+!*.sh
 
 # 附加保險：常見 IDE / 系統自動產生檔案
 .DS_Store
