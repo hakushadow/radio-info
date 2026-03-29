@@ -1,0 +1,326 @@
+{
+  "version": 3,
+  "updated_at": "2026-03-27T00:00:00Z",
+  "stations": [
+    {
+      "id": "animu-fm",
+      "name": "Animu FM",
+      "website_url": "https://animu.moe/",
+      "description": "A Rádio Otaku Mais Moe do Brasil",
+      "genre": "Anime",
+      "country": "BR",
+      "language": "pt",
+      "logo_url": null,
+      "status": "online",
+      "streams": [
+        { "url": "https://stream.animu.moe/320", "codec": "mp3", "bitrate_kbps": 320, "quality": "high", "is_default": true },
+        { "url": "https://stream.animu.moe/192", "codec": "mp3", "bitrate_kbps": 192, "quality": "medium", "is_default": false },
+        { "url": "https://stream.animu.moe/64", "codec": "he-aac", "bitrate_kbps": 64, "quality": "low", "is_default": false }
+      ],
+      "now_playing": {
+        "type": "json",
+        "url": "https://api.animu.moe/",
+        "interval_seconds": 5,
+        "mapping": {
+          "title": "track.title",
+          "artist": "track.artist",
+          "artwork": "track.artworks.large"
+        },
+        "artwork_template": null
+      },
+      "artwork": {
+        "strategy": "api_field"
+      },
+      "history_url": null
+    },
+    {
+      "id": "listen-moe",
+      "name": "LISTEN.moe",
+      "website_url": "https://listen.moe/",
+      "description": "Japanese & anime music radio",
+      "genre": "Anime",
+      "country": "US",
+      "language": "ja",
+      "logo_url": null,
+      "status": "online",
+      "streams": [
+        { "url": "https://listen.moe/opus", "codec": "opus", "bitrate_kbps": 56, "quality": "high", "is_default": false },
+        { "url": "https://listen.moe/stream", "codec": "vorbis", "bitrate_kbps": 256, "quality": "medium", "is_default": false },
+        { "url": "https://listen.moe/fallback", "codec": "mp3", "bitrate_kbps": 256, "quality": "low", "is_default": true }
+      ],
+      "now_playing": {
+        "type": "websocket",
+        "url": "wss://listen.moe/gateway_v2",
+        "interval_seconds": 0,
+        "mapping": {
+          "title": "data.title",
+          "artist": "data.artists[0].name",
+          "artwork_token": "data.albums[0].image.name"
+        },
+        "artwork_template": "https://cdn.listen.moe/covers/{value}"
+      },
+      "artwork": {
+        "strategy": "cdn_compose"
+      },
+      "history_url": null
+    },
+    {
+      "id": "animeradio-de",
+      "name": "AnimeRadio.de",
+      "website_url": "https://www.animeradio.de/",
+      "description": "German anime radio — music from anime, games & J-pop",
+      "genre": "Anime",
+      "country": "DE",
+      "language": "de",
+      "logo_url": null,
+      "status": "online",
+      "streams": [
+        { "url": "https://stream.animeradio.de/animeradio.mp3", "codec": "mp3", "bitrate_kbps": 192, "quality": "high", "is_default": true },
+        { "url": "https://stream.animeradio.de/animeradio96.ogg", "codec": "vorbis", "bitrate_kbps": 96, "quality": "medium", "is_default": false },
+        { "url": "https://stream.animeradio.de/animeradio.ogg", "codec": "vorbis", "bitrate_kbps": 64, "quality": "low", "is_default": false },
+        { "url": "https://stream.animeradio.de/animeradio.aac", "codec": "he-aac", "bitrate_kbps": 32, "quality": "low", "is_default": false }
+      ],
+      "now_playing": {
+        "type": "json",
+        "url": "https://www.animeradio.de/api/songhistory",
+        "interval_seconds": 15,
+        "mapping": {
+          "title": "songHistoryList[0].title",
+          "artist": "songHistoryList[0].artist"
+        },
+        "artwork_template": null
+      },
+      "artwork": {
+        "strategy": "itunes_search"
+      },
+      "history_url": null
+    },
+    {
+      "id": "radio-jhero",
+      "name": "Radio J-Hero",
+      "website_url": "https://www.radiojhero.com/",
+      "description": "Anime & J-pop radio — 320kbps",
+      "genre": "Anime",
+      "country": null,
+      "language": "es",
+      "logo_url": null,
+      "status": "online",
+      "streams": [
+        { "url": "https://listen.radiojhero.com/radio.mp3", "codec": "mp3", "bitrate_kbps": 320, "quality": "high", "is_default": true },
+        { "url": "https://listen.radiojhero.com/radio.aac", "codec": "aac", "bitrate_kbps": 128, "quality": "medium", "is_default": false },
+        { "url": "https://listen.radiojhero.com/radio.ogg", "codec": "opus", "bitrate_kbps": 89, "quality": "low", "is_default": false }
+      ],
+      "now_playing": {
+        "type": "json",
+        "url": "https://api.radiojhero.com/streaming/np",
+        "interval_seconds": 15,
+        "mapping": {
+          "raw_title": "song_history[0].title"
+        },
+        "artwork_template": null
+      },
+      "artwork": {
+        "strategy": "itunes_search"
+      },
+      "history_url": null
+    },
+    {
+      "id": "anime-plus-radio",
+      "name": "Anime Plus Radio",
+      "website_url": "https://animeplusradio.com/",
+      "description": "Anime music radio on Zeno.fm",
+      "genre": "Anime",
+      "country": null,
+      "language": "en",
+      "logo_url": null,
+      "status": "online",
+      "streams": [
+        { "url": "https://stream.zeno.fm/rfun7q8bt8quv", "codec": "mp3", "bitrate_kbps": 128, "quality": "high", "is_default": true }
+      ],
+      "now_playing": {
+        "type": "icy",
+        "url": null,
+        "interval_seconds": 0,
+        "mapping": {},
+        "artwork_template": null
+      },
+      "artwork": {
+        "strategy": "itunes_search"
+      },
+      "history_url": null
+    },
+    {
+      "id": "yggdrasil-radio",
+      "name": "Yggdrasil Radio",
+      "website_url": "https://yggdrasilradio.com/",
+      "description": "Anime & J-pop radio",
+      "genre": "Anime",
+      "country": "US",
+      "language": "en",
+      "logo_url": null,
+      "status": "online",
+      "streams": [
+        { "url": "http://radio.shirayuki.org:9200/", "codec": "mp3", "bitrate_kbps": 128, "quality": "high", "is_default": false },
+        { "url": "https://stream.rcast.net/70702", "codec": "mp3", "bitrate_kbps": 96, "quality": "medium", "is_default": true },
+        { "url": "http://radio.shirayuki.org:9100/", "codec": "he-aac", "bitrate_kbps": 56, "quality": "low", "is_default": false }
+      ],
+      "now_playing": {
+        "type": "json",
+        "url": "https://yggdrasilradio.com/api/playing/",
+        "interval_seconds": 5,
+        "mapping": {
+          "raw_title": "current.title",
+          "artwork": "current.images.large"
+        },
+        "artwork_template": null
+      },
+      "artwork": {
+        "strategy": "itunes_search"
+      },
+      "history_url": null
+    },
+    {
+      "id": "kodama-station",
+      "name": "Kodama Station",
+      "website_url": "https://kodamastation.com/",
+      "description": "Anime & game music radio — AzuraCast",
+      "genre": "Anime",
+      "country": null,
+      "language": "ja",
+      "logo_url": null,
+      "status": "online",
+      "streams": [
+        { "url": "https://cast.kodamastation.com:8000/Rd320.mp3", "codec": "mp3", "bitrate_kbps": 320, "quality": "high", "is_default": true },
+        { "url": "https://cast.kodamastation.com:8000/radio.mp3", "codec": "mp3", "bitrate_kbps": 128, "quality": "low", "is_default": false }
+      ],
+      "now_playing": {
+        "type": "json",
+        "url": "https://cast.kodamastation.com/api/nowplaying/kodama_station",
+        "interval_seconds": 15,
+        "mapping": {
+          "title": "now_playing.song.title",
+          "artist": "now_playing.song.artist",
+          "artwork": "now_playing.song.art"
+        },
+        "artwork_template": null
+      },
+      "artwork": {
+        "strategy": "api_field"
+      },
+      "history_url": null
+    },
+    {
+      "id": "akiba",
+      "name": "Rede Akiba",
+      "website_url": "https://akiba.com.br/",
+      "description": "Brazilian anime music radio",
+      "genre": "Anime",
+      "country": "BR",
+      "language": "pt",
+      "logo_url": null,
+      "status": "online",
+      "streams": [
+        { "url": "https://stm3.painelcast.com:7770/stream", "codec": "mp3", "bitrate_kbps": 128, "quality": "high", "is_default": true }
+      ],
+      "now_playing": {
+        "type": "icy",
+        "url": null,
+        "interval_seconds": 0,
+        "mapping": {},
+        "artwork_template": null
+      },
+      "artwork": {
+        "strategy": "itunes_search"
+      },
+      "history_url": null
+    },
+    {
+      "id": "isekaianimeradio",
+      "name": "ISEKAI ANIME RADIO",
+      "website_url": "https://hello.citrus3.com/",
+      "description": "Anime music radio — AAC 128kbps",
+      "genre": "Anime",
+      "country": null,
+      "language": "ja",
+      "logo_url": null,
+      "status": "online",
+      "streams": [
+        { "url": "https://hello.citrus3.com:2020/8796/stream", "codec": "aac", "bitrate_kbps": 128, "quality": "high", "is_default": true }
+      ],
+      "now_playing": {
+        "type": "json",
+        "url": "https://hello.citrus3.com:2020/AudioPlayer/isekaianimeradio/playerInfo",
+        "interval_seconds": 5,
+        "mapping": {
+          "raw_title": "nowplaying"
+        },
+        "artwork_template": null
+      },
+      "artwork": {
+        "strategy": "separate_endpoint",
+        "url": "https://hello.citrus3.com:2020/AudioPlayer/isekaianimeradio/albumCover",
+        "response_type": "json",
+        "response_mapping": "coverImage",
+        "interval_seconds": 5
+      },
+      "history_url": null
+    },
+    {
+      "id": "fananpy-radio",
+      "name": "Fananpy Radio",
+      "website_url": "https://keepone.net/radio/k111216/fananpy-radio",
+      "description": "Anime music radio on Zeno.fm",
+      "genre": "Anime",
+      "country": null,
+      "language": "ja",
+      "logo_url": null,
+      "status": "online",
+      "streams": [
+        { "url": "https://stream.zeno.fm/8p9ypyq537zuv", "codec": "mp3", "bitrate_kbps": 128, "quality": "high", "is_default": true }
+      ],
+      "now_playing": {
+        "type": "icy",
+        "url": null,
+        "interval_seconds": 0,
+        "mapping": {},
+        "artwork_template": null
+      },
+      "artwork": {
+        "strategy": "itunes_search"
+      },
+      "history_url": null
+    },
+    {
+      "id": "radio-anineko",
+      "name": "Radio-AniNeko",
+      "website_url": "https://radio-anineko.de/",
+      "description": "German anime music radio — AzuraCast",
+      "genre": "Anime",
+      "country": "DE",
+      "language": "de",
+      "logo_url": null,
+      "status": "online",
+      "streams": [
+        { "url": "https://radiostream01.anineko.moe/listen/radio-anineko/RadioAniNeko192.aac", "codec": "aac", "bitrate_kbps": 194, "quality": "high", "is_default": false },
+        { "url": "https://radiostream01.anineko.moe/listen/radio-anineko/RadioAniNeko192.mp3", "codec": "mp3", "bitrate_kbps": 192, "quality": "high", "is_default": true },
+        { "url": "https://radiostream01.anineko.moe/listen/radio-anineko/RadioAniNeko128.aac", "codec": "aac", "bitrate_kbps": 131, "quality": "medium", "is_default": false },
+        { "url": "https://radiostream01.anineko.moe/listen/radio-anineko/RadioAniNeko128.mp3", "codec": "mp3", "bitrate_kbps": 192, "quality": "low", "is_default": false }
+      ],
+      "now_playing": {
+        "type": "json",
+        "url": "https://radiostream01.anineko.moe/api/nowplaying/radio-anineko",
+        "interval_seconds": 15,
+        "mapping": {
+          "title": "now_playing.song.title",
+          "artist": "now_playing.song.artist",
+          "artwork": "now_playing.song.art"
+        },
+        "artwork_template": null
+      },
+      "artwork": {
+        "strategy": "api_field"
+      },
+      "history_url": null
+    }
+  ]
+}
